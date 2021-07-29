@@ -1,6 +1,8 @@
 import "../App.css";
 import React from "react";
 import logo from "../assets/img/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,10 +10,15 @@ const Header = () => {
       <div className="container">
         <img alt="logo" src={logo} />
         <div className="searchBar">
-          <input placeholder="Recherche des articles"></input>
+          <FontAwesomeIcon icon="search" />
+          <input type="text" placeholder="Recherche des articles"></input>
         </div>
-        <button className="buttonOne">S'inscrire</button>
-        <button className="buttonTwo">Se connecter</button>
+        <Link to={`/signup`} className="buttonOne">
+          S'inscrire
+        </Link>
+        <Link to={`/login`} className="buttonTwo">
+          Se connecter
+        </Link>
         <button className="buttonThree">Vends tes articles</button>
       </div>
     </div>
