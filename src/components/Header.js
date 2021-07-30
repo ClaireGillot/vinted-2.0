@@ -4,8 +4,10 @@ import logo from "../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Header = () => {
-  return (
+const Header = ({ userToken, setUser }) => {
+  return userToken ? (
+    <button onClick={() => setUser(null)}>Se Déconnecter</button>
+  ) : (
     <div className="header">
       <div className="container">
         <img alt="logo" src={logo} />
