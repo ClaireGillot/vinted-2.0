@@ -4,7 +4,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Signup = ({ setUser }) => {
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPasseword] = useState("");
@@ -16,7 +16,7 @@ const Signup = ({ setUser }) => {
       event.preventDefault();
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        { userName: userName, email: email, phone: phone, password: password }
+        { username: username, email: email, phone: phone, password: password }
       );
       if (response.data.token) {
         setUser(response.data.token);
@@ -36,7 +36,7 @@ const Signup = ({ setUser }) => {
       <form onSubmit={handleSubmit}>
         <h3>S'incrire</h3>
         <input
-          onChange={(event) => setUserName(event.target.value)}
+          onChange={(event) => setUsername(event.target.value)}
           type="text"
           placeholder="Nom d'utilisateur"
         />

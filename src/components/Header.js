@@ -6,14 +6,24 @@ import { Link } from "react-router-dom";
 
 const Header = ({ userToken, setUser }) => {
   return userToken ? (
-    <button onClick={() => setUser(null)}>Se Déconnecter</button>
+    <div className="header">
+      <div className="container">
+        <img alt="logo" src={logo} />
+        <div className="searchBar">
+          <FontAwesomeIcon icon="search" />
+          <input type="text" placeholder="Recherche des articles..."></input>
+        </div>
+        <button onClick={() => setUser(null)}>Se Déconnecter</button>
+        <button className="buttonThree">Vends tes articles</button>
+      </div>
+    </div>
   ) : (
     <div className="header">
       <div className="container">
         <img alt="logo" src={logo} />
         <div className="searchBar">
           <FontAwesomeIcon icon="search" />
-          <input type="text" placeholder="Recherche des articles"></input>
+          <input type="text" placeholder="Recherche des articles..."></input>
         </div>
         <Link to={`/signup`} className="buttonOne">
           S'inscrire

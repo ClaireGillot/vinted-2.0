@@ -16,7 +16,7 @@ const Login = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
-        history.pushState("/");
+        history.push("/");
       }
     } catch (error) {
       // console.log(error.response);
@@ -31,10 +31,12 @@ const Login = ({ setUser }) => {
         <input
           onChange={(event) => setEmail(event.target.value)}
           type="email"
+          placeholder="Email"
         />
         <input
           onChange={(event) => setPasseword(event.target.value)}
           type="password"
+          placeholder="Mot de passe"
         />
         <input type="submit" value="Se connecter" />
         <Link to={`/signup`}>Pas encore de compte ? Inscris-toi!</Link>
