@@ -3,7 +3,7 @@
 const isAuthenticated = async (req, res, next) => {
  //Si je recois un token existant..
   req.headers.authorization ? (
-      //alors le stock.
+      //alors je le stock.
    token = req.headers.authorization.replace("Bearer", ""
    ) : (
        //Sinon..
