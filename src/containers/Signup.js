@@ -33,32 +33,35 @@ const Signup = ({ setUser }) => {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <h3>S'incrire</h3>
-        <input
-          onChange={(event) => setUsername(event.target.value)}
-          type="text"
-          placeholder="Nom d'utilisateur"
-        />
-        <input
-          onChange={(event) => setEmail(event.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          onChange={(event) => setPhone(event.target.value)}
-          type="tel"
-          placeholder="Numéro de téléphone"
-        />
-        <input
-          onChange={(event) => setPasseword(event.target.value)}
-          type="password"
-          placeholder="Mot de passe"
-        />
-        <span>{errorMessage}</span>
-        <input type="submit" value="S'incrire" />
-        <Link to={`/login/`}>Tu as déjà un compte ? Connecte-toi !</Link>
-      </form>
+      <div className="signUp">
+        <form onSubmit={handleSubmit}>
+          <h3>S'incrire</h3>
+          <input
+            onChange={(event) => setUsername(event.target.value)}
+            type="text"
+            placeholder="Nom d'utilisateur"
+          />
+
+          <input
+            onChange={(event) => setEmail(event.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            onChange={(event) => setPhone(event.target.value)}
+            type="tel"
+            placeholder="Numéro de téléphone"
+          />
+          <input
+            onChange={(event) => setPasseword(event.target.value)}
+            type="password"
+            placeholder="Mot de passe"
+          />
+          <span>{errorMessage}</span>
+          <input type="submit" value="S'incrire" />
+          <Link to={`/login/`}>Tu as déjà un compte ? Connecte-toi !</Link>
+        </form>
+      </div>
     </div>
   );
 };

@@ -171,5 +171,15 @@ SIGNUP
 ----------
 */
 
-.input {
+h3 {
+  text-align: center;
+}
+.signUp {
+  background-color: var(--lightPink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signUp .input {
+  color: rgb(108, 108, 173);
 }

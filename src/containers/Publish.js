@@ -1,9 +1,9 @@
 import "../App.css";
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const Publish = () => {
+const Publish = ({ userToken }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -14,7 +14,8 @@ const Publish = () => {
   const [color, setColor] = useState("");
   const [picture, setPicture] = useState();
   const [data, setData] = useState();
-  // const token = "a  aller chercher dans le cookie";
+  const token = { userToken };
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     try {
@@ -33,15 +34,16 @@ const Publish = () => {
 
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-        formData
-        // {
-        //   headers: {
-        //     Authorization: `Bearer ${token}`,
-        //   },
-        // }
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       console.log(response.data);
       setData(response.data.result);
+      history.push("/home");
     } catch (error) {
       console.log(error.response);
       console.log(error.message);
@@ -56,7 +58,7 @@ const Publish = () => {
           <div>
             <input
               type="file"
-              onChange={(event) => setPicture(event.target.files)}
+              onChange={(event) => setPicture(event.target.files[0])}
             />
           </div>
           <div>
@@ -117,10 +119,9 @@ const Publish = () => {
               Souhaitez-vous vous abonner à la newsletter ?
             </label>
           </div>
-          <Link to="/home">
-            <input type="submit" />
-          </Link>
+          <input type="submit" />
         </form>
+
         {data && <img src={data.secure_url} alt="" />}
       </div>
     </>
