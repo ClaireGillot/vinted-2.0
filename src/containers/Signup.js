@@ -41,24 +41,30 @@ const Signup = ({ setUser }) => {
             type="text"
             placeholder="Nom d'utilisateur"
           />
-
+          <br />
           <input
             onChange={(event) => setEmail(event.target.value)}
             type="email"
             placeholder="Email"
           />
+          <br />
           <input
             onChange={(event) => setPhone(event.target.value)}
             type="tel"
             placeholder="Numéro de téléphone"
           />
+          <br />
           <input
             onChange={(event) => setPasseword(event.target.value)}
             type="password"
             placeholder="Mot de passe"
           />
+          <br />
           <span>{errorMessage}</span>
-          <input type="submit" value="S'incrire" />
+
+          <input type="submit" value="S'incrire" className="button" />
+
+          <br />
           <Link to={`/login/`}>Tu as déjà un compte ? Connecte-toi !</Link>
         </form>
       </div>

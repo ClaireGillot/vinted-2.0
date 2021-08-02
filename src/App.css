@@ -166,20 +166,63 @@ HOME PAGE
 }
 
 /*
-----------
-SIGNUP
-----------
+-----------------
+SIGNUP & LOGIN
+-----------------
 */
 
 h3 {
   text-align: center;
 }
-.signUp {
-  background-color: var(--lightPink);
+.signUp,
+.login {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  text-decoration: none;
 }
-.signUp .input {
-  color: rgb(108, 108, 173);
+
+.signUp input,
+.login input {
+  width: 320px;
+  background-color: var(--white);
+  color: var(--grey);
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--lightPink);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.signUp .button,
+.login .button {
+  background-color: var(--green);
+  border-bottom: none;
+  color: var(--white);
+  width: 173px;
+  height: 45px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+/* 
+-----------
+FOOTER
+-----------
+*/
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 15px;
+  color: var(--darkGrey);
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--darkGrey);
 }

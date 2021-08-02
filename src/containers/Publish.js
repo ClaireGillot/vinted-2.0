@@ -61,13 +61,13 @@ const Publish = ({ token }) => {
             />
           </div>
           <div>
-            <h3>Titre</h3>
+            <h5>Titre</h5>
             <input
               type="text"
               placeholder="ex:Chaussure de marche"
               onChange={(event) => setTitle(event.target.value)}
             />
-            <h3>Décris ton article</h3>
+            <h5>Décris ton article</h5>
             <input
               type="text"
               placeholder="ex:jamais portées, lacets en plus"
@@ -75,31 +75,31 @@ const Publish = ({ token }) => {
             />
           </div>
           <div>
-            <h3>Marque</h3>
+            <h5>Marque</h5>
             <input
               type="text"
               placeholder="ex:Nike"
               onChange={(event) => setBrand(event.target.value)}
             />
-            <h3>Taille</h3>
+            <h5>Taille</h5>
             <input
               type="text"
               placeholder="ex:40/41"
               onChange={(event) => setSize(event.target.value)}
             />
-            <h3>Couleur</h3>
+            <h5>Couleur</h5>
             <input
               type="text"
               placeholder="ex:noire"
               onChange={(event) => setColor(event.target.value)}
             />
-            <h3>Etat</h3>
+            <h5>Etat</h5>
             <input
               type="text"
               placeholder="Neuf, sans étiquette"
               onChange={(event) => setCondition(event.target.value)}
             />
-            <h3>Lieu</h3>
+            <h5>Lieu</h5>
             <input
               type="text"
               placeholder="ex:Lyon"
@@ -107,7 +107,7 @@ const Publish = ({ token }) => {
             />
           </div>
           <div>
-            <h3>Prix</h3>
+            <h5>Prix</h5>
             <input
               type="text"
               placeholder="0,00€"
@@ -118,7 +118,7 @@ const Publish = ({ token }) => {
               Souhaitez-vous vous abonner à la newsletter ?
             </label>
           </div>
-
+          <br />
           <input type="submit" />
         </form>
 
