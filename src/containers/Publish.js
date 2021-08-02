@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Publish = ({ userToken }) => {
+const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -14,7 +14,6 @@ const Publish = ({ userToken }) => {
   const [color, setColor] = useState("");
   const [picture, setPicture] = useState();
   const [data, setData] = useState();
-  const token = { userToken };
   const history = useHistory();
 
   const handleSubmit = async (event) => {
@@ -119,6 +118,7 @@ const Publish = ({ userToken }) => {
               Souhaitez-vous vous abonner à la newsletter ?
             </label>
           </div>
+
           <input type="submit" />
         </form>
 
