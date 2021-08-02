@@ -1,40 +1,45 @@
 import "../App.css";
+
 import React from "react";
 import logo from "../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const Header = ({ userToken, setUser }) => {
-  return userToken ? (
+  return (
     <div className="header">
       <div className="container">
-        <img alt="logo" src={logo} />
-        <div className="searchBar">
+        <Link to={"/home"}>
+          <img className="logo" alt="logo" src={logo} />
+        </Link>
+        <div className="searchIcon">
           <FontAwesomeIcon icon="search" />
+        </div>
+        <div className="research">
           <input type="text" placeholder="Recherche des articles..."></input>
         </div>
-        <button onClick={() => setUser(null)}>Se Déconnecter</button>
-        <button className="buttonThree">Vends tes articles</button>
-      </div>
-    </div>
-  ) : (
-    <div className="header">
-      <div className="container">
-        <img alt="logo" src={logo} />
-        <div className="searchBar">
-          <FontAwesomeIcon icon="search" />
-          <input type="text" placeholder="Recherche des articles..."></input>
-        </div>
-        <Link to={`/signup`} className="buttonOne">
-          S'inscrire
-        </Link>
-        <Link to={`/login`} className="buttonTwo">
-          Se connecter
-        </Link>
-        <button className="buttonThree">Vends tes articles</button>
+
+        {userToken ? (
+          <>
+            <button className="buttonDeconnect" onClick={() => setUser(null)}>
+              Se déconnecter
+            </button>
+            <Link to={`/publish`} className="buttonPublish">
+              Vends tes articles
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to={`/signup`} className="buttonSignUp">
+              S'inscrire
+            </Link>
+            <Link to={`/login`} className="buttonLogin">
+              Se connecter
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
 };
-
 export default Header;

@@ -32,7 +32,7 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <h3>S'incrire</h3>
         <input
