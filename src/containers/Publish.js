@@ -50,12 +50,13 @@ const Publish = ({ token }) => {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="publish">
+        <h3>Vends ton article</h3>
         <form onSubmit={handleSubmit}>
-          <h2>Vends ton article</h2>
           <div>
             <input
+              className="picture"
               type="file"
               onChange={(event) => setPicture(event.target.files[0])}
             />
@@ -113,18 +114,19 @@ const Publish = ({ token }) => {
               placeholder="0,00€"
               onChange={(event) => setPrice(event.target.value)}
             />
+            <br />
             <input type="checkbox" id="shareOk" name="share" />
             <label for="shareOk">
               Souhaitez-vous vous abonner à la newsletter ?
             </label>
           </div>
           <br />
-          <input type="submit" />
+          <input type="submit" className="button" />
         </form>
 
         {data && <img src={data.secure_url} alt="" />}
       </div>
-    </>
+    </div>
   );
 };
 

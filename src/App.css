@@ -23,11 +23,15 @@ COMMON RULES
 h2 {
   font-size: 35px;
 }
-
 h3 {
+  text-align: center;
+  margin-bottom: 50px;
   font-size: 25px;
 }
-
+h5 {
+  font-size: 20px;
+  color: var(--darkGrey);
+}
 * {
   box-sizing: border-box;
 }
@@ -171,9 +175,6 @@ SIGNUP & LOGIN
 -----------------
 */
 
-h3 {
-  text-align: center;
-}
 .signUp,
 .login {
   width: 100%;
@@ -181,32 +182,58 @@ h3 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 10px;
-  text-decoration: none;
 }
 
 .signUp input,
 .login input {
   width: 320px;
   background-color: var(--white);
-  color: var(--grey);
+  color: var(--darkGrey);
   padding: 10px 10px;
   border-bottom: 1px solid var(--lightPink);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 
 .signUp .button,
-.login .button {
+.login .button,
+.publish .button {
   background-color: var(--green);
   border-bottom: none;
   color: var(--white);
   width: 173px;
   height: 45px;
-  margin: 15px;
+  margin-top: 50px;
   cursor: pointer;
 }
 
+.lien {
+  color: var(--green);
+  text-decoration: none;
+  font-size: 10px;
+}
+
+/* 
+-----------
+PUBLISH
+-----------
+*/
+
+.publish {
+  width: 100%;
+}
+
+.publish input {
+  background-color: var(--white);
+}
+
+.publish .button {
+  text-align: center;
+}
+
+.picture {
+  justify-content: center;
+}
 /* 
 -----------
 FOOTER
